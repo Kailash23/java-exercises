@@ -45,7 +45,8 @@ public class QueueResource {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("Consuming ...");
+			int frontElement = queue.element();
+			System.out.println("Consuming -> " + frontElement);
 			queue.remove();
 			notify();
 		}

@@ -2,7 +2,7 @@ package com.unit_testing.producer_consumer;
 
 public class Producer implements Runnable {
 
-	QueueResource queueResource;
+	public QueueResource queueResource;
 	int delay;
 	Boolean bool = true;
 	
@@ -28,6 +28,7 @@ public class Producer implements Runnable {
 	}
 	
 	public void produce() {
+		halt();
 		queueResource.putInQueue(val++);
 	}
 	

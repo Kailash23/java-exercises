@@ -13,7 +13,7 @@ import org.junit.Test;
  * 
  * @author kailash23
  *
- * Unit testing in producer consumer problem.
+ * Unit testing in producer-consumer problem.
  */
 
 public class AppTest {
@@ -23,17 +23,17 @@ public class AppTest {
 	static int producerThreadSleepTime;
 
 	@BeforeClass
-	public static void AppInitialized() {
+	public static void appStart() {
 		numOfTestCases = 0;
-		consumerThreadSleepTime = 1000;
+		consumerThreadSleepTime = 2000;
 		producerThreadSleepTime = 2000;
+		App.startConsumer(consumerThreadSleepTime);
+		App.startProducer(producerThreadSleepTime);
 	}
 
 	@Before
-	public void changingParameters() {
+	public void beforeTest() {
 		numOfTestCases++;
-		App.startConsumer(consumerThreadSleepTime);
-		App.startProducer(producerThreadSleepTime);
 	}
 
 	public Thread[] getThreadList() {
@@ -63,17 +63,8 @@ public class AppTest {
 	 */
 	@Test
 	public void checkConsumerThreadRunning() {
-
-		System.out.print("Test " + numOfTestCases + ": ");
-
 		Boolean bool = checkThreadPresence("consumer");
 		Assert.assertEquals(bool, true);
-
-		if (bool == true) {
-			System.out.println("Consumer thread running ...!");
-		} else {
-			System.out.println("Consumer thread not running ...!");
-		}
 	}
 
 	/**
@@ -81,53 +72,52 @@ public class AppTest {
 	 */
 	@Test
 	public void checkProducerThreadRunning() {
-
-		System.out.print("Test " + numOfTestCases + ": ");
-
 		Boolean bool = checkThreadPresence("producer");
 		Assert.assertEquals(bool, true);
-
-		if (bool == true) {
-			System.out.println("Producer thread running ...!");
-		} else {
-			System.out.println("Producer thread not running ...!");
-		}
 	}
 
 	/**
-	 * Test 3 :
+	 * Test 3 : Checking putInQueue() function of QueueResource
 	 */
 	@Test
-	public void test4() throws InterruptedException {
-		System.out.print("Test " + numOfTestCases + ": ");
+	public void checkProducer() throws InterruptedException {
+
+		int queueSize = 5;
+		QueueResource queueResource = new QueueResource(queueSize);
+		// Producing first item - 5
+		queueResource.putInQueue(5);
+
+		// element is present in queue's front
+		int element = queueResource.queue.element();
 		
-		Thread t = new Thread(new Runnable() {
-			public void run() {
-				try {
-					Thread.sleep(5 /*seconds*/ * 1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		t.start();
-		
-		if(consumerThreadSleepTime > producerThreadSleepTime) {
-			System.out.println(App.queue.getSize());
-		} else if(consumerThreadSleepTime <  producerThreadSleepTime){
-			System.out.println(App.queue.getSize());
-		} else {
-			System.out.println(App.queue.getSize());
-		}
-		
+		// Only element at queue ie 5
+		Assert.assertEquals(element, 5);
 	}
 
 	/**
-	 * Test 5 :
+	 * Test 4 : Checking takeFromQueue() function of QueueResource
 	 */
 	@Test
-	public void test5() {
-
+	public void checkConsumer() {
+		
+		int queueSize = 5;
+		QueueResource queueResource = new QueueResource(queueSize);
+		// First item produced - 1
+		queueResource.putInQueue(1);
+		// Second item produced - 2
+		queueResource.putInQueue(2);
+		
+		// Queue should be like >1>2, consumer will consume form front
+		// Queue after consuming one time >2
+		
+		queueResource.takeFromQueue();
+		
+		int queueFront = queueResource.queue.element();
+		
+		// Queue front should be 2
+		Assert.assertEquals(queueFront, 2);
+		// Queue size should be 1
+		Assert.assertEquals(queueResource.queue.size(), 1);
 	}
 
 	@After
