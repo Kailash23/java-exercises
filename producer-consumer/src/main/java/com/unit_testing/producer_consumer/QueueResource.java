@@ -8,12 +8,17 @@ public class QueueResource {
 	Queue<Integer> queue = new LinkedList<Integer>();
 	public int queueSize;
 	
+	int numOfItemsConsumed;
+	int numOfItemsProduced;
+	
 	QueueResource(int size) {
 		this.queueSize = size;
 	}
 	
 	public synchronized void putInQueue(int num) {
+		
 		Utils.print(queue);
+		
 		if(queue.size() == queueSize) {
 			System.out.println("Producer waiting ... !");
 			try {
@@ -29,7 +34,9 @@ public class QueueResource {
 	}
 	
 	public synchronized void takeFromQueue() {
+		
 		Utils.print(queue);
+		
 		if(queue.size() == 0) {
 			System.out.println("Consumer waiting ... !");
 			try {
@@ -42,6 +49,10 @@ public class QueueResource {
 			queue.remove();
 			notify();
 		}
+	}
+	
+	public int getSize() {
+		return queue.size();
 	}
 	
 }
