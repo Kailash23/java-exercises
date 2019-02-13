@@ -1,33 +1,52 @@
 package com.unit_testing.producer_consumer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Assert;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * 
+ * @author kailash23
+ *
+ *         Unit testing in producer consumer problem.
  */
-public class AppTest extends TestCase {
-	/**
-	 * Create the test case
-	 *
-	 * @param testName name of the test case
-	 */
-	public AppTest(String testName) {
-		super(testName);
+
+public class AppTest {
+	
+	@Before
+	public void setUp() {
+		
+		App app = new App();
 	}
 
-	/**
-	 * @return the suite of tests being tested
-	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
+	@BeforeClass
+	public static void beforeClass() {
+		System.out.println("Before Class");
 	}
 
-	/**
-	 * Rigourous Test :-)
-	 */
-	public void testApp() {
-		assertTrue(true);
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("After Class");
 	}
+
+	@After
+	public void after() {
+		System.out.println("After");
+	}
+
+	@Test
+	public void testSum() {
+		Assert.assertEquals(9, 9);
+	}
+
+	@Test
+	public void testMultiply() {
+		Assert.assertEquals(9, 9);
+	}
+
 }

@@ -7,7 +7,7 @@ package com.unit_testing.producer_consumer;
 public class App {
 	public static void main(String[] args) {
 		
-		QueueResource queue = new QueueResource(5);
+		QueueResource queue = new QueueResource(6);
 		
 		Producer producer = new Producer(queue);
 		Consumer consumer = new Consumer(queue);

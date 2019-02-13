@@ -22,7 +22,7 @@ public class QueueResource {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("Adding"  + num);
+			System.out.println("Adding to queue : "  + num);
 			queue.add(num);
 			notify();
 		}
