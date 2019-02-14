@@ -4,7 +4,7 @@ public class Consumer implements Runnable {
 
 	QueueResource queueResource;
 	int delay;
-	Boolean bool = true;
+	Boolean wait = true;
 
 	void halt() {
 		Thread t = new Thread(new Runnable() {
@@ -14,7 +14,7 @@ public class Consumer implements Runnable {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				bool = false;
+				wait = false;
 			}
 		});
 		t.start();
@@ -31,7 +31,7 @@ public class Consumer implements Runnable {
 	}
 
 	public void run() {
-		while (bool) {
+		while (wait) {
 			try {
 				Thread.sleep(delay);
 			} catch (InterruptedException e) {

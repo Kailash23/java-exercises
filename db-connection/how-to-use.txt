@@ -1,0 +1,12 @@
+create database empdb;
+
+use empdb;
+
+CREATE TABLE `empdetails` (
+  `name` varchar(100) NOT NULL,
+  `empid` int(10) NOT NULL,
+  `doj` date DEFAULT NULL,
+  `dept` varchar(10) DEFAULT NULL,
+  `salary` int(10) DEFAULT NULL,
+  PRIMARY KEY (`empid`)
+);
