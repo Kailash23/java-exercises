@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/submit")
 public class LoginServlet extends HttpServlet {
 	
+	// The serialVersionUID is a universal version identifier 
+	// for a Serializable class.
 	private static final long serialVersionUID = 1L;
-
-	Connection connection;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String emailInput = request.getParameter("email");
 		String passwordInput = request.getParameter("password");
 
@@ -31,7 +32,5 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			out.println("<h1>Failed!</h1>");
 		}
-
 	}
-
 }
