@@ -1,18 +1,18 @@
 package model;
 
-public class ItemDetails {
+public class Product {
 
 	private int itemId;
 	private String productName;
 	private int price;
-	private int discount;
+	private String desc;
 	private int category;
 	
-	public ItemDetails(int itemId, String productName, int price, int discount, int category) {
+	public Product(int itemId, String productName, int price, String desc, int category) {
 		this.itemId = itemId;
 		this.productName = productName;
 		this.price = price;
-		this.discount = discount;
+		this.desc = desc;
 		this.category = category;
 	}
 
@@ -40,12 +40,12 @@ public class ItemDetails {
 		this.price = price;
 	}
 
-	public int getDiscount() {
-		return discount;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDiscount(int discount) {
-		this.discount = discount;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public int getCategory() {
@@ -55,4 +55,6 @@ public class ItemDetails {
 	public void setCategory(int category) {
 		this.category = category;
 	}
+
 }
+	

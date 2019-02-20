@@ -9,7 +9,7 @@ package service;
  *
  */
 
-public class Order {
+public class OrderService {
 
 }
 

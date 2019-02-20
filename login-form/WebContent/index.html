@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+
+     <form name="login" method="post" action="/login-form/submit">
+        <input name="email" type="email"required>
+        <input name="password" type="password" required>
+        <button type="submit">Log in</button>
+    </form>
+
+</body>
+
+<script>
+    var loginForm = document.forms.login; // Or document.forms['login']
+    loginForm.elements.email.placeholder = 'test@example.com';
+    loginForm.elements.password.placeholder = 'password';
+</script>
+
+</html>
