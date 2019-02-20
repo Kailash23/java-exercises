@@ -1,7 +1,9 @@
+package controller;
 
+import service.UserAuthorization;
 import java.io.IOException;
+
 import java.io.PrintWriter;
-import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/submit")
-public class LoginServlet extends HttpServlet {
+public class LoginController extends HttpServlet {
 	
 	// The serialVersionUID is a universal version identifier 
 	// for a Serializable class.
@@ -22,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		String emailInput = request.getParameter("email");
 		String passwordInput = request.getParameter("password");
 
-		Authorization validate = new Authorization();
+		UserAuthorization validate = new UserAuthorization();
 		Boolean bool = validate.validateUser(emailInput, passwordInput);
 
 		PrintWriter out = response.getWriter();

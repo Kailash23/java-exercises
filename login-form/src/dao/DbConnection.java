@@ -1,12 +1,13 @@
+package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnection {
 	
-	Connection connection;
+	static Connection connection;
 	
-	public void createConnection() {
+	public static void createConnection() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/info", "root", "root");
@@ -18,7 +19,8 @@ public class DbConnection {
 		} 
 	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
+		createConnection();
 		return connection;
 	}
 }
