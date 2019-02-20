@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 		String emailInput = request.getParameter("email");
 		String passwordInput = request.getParameter("password");
 
-		Validation validate = new Validation();
+		Authorization validate = new Authorization();
 		Boolean bool = validate.validateUser(emailInput, passwordInput);
 
 		PrintWriter out = response.getWriter();
