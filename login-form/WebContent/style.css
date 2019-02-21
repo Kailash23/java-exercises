@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 .email_error {
-	color: red;
+	color: #a40000;
 	margin-top: 10px;
 }
 
 .pass_error {
-	color: red;
+	color: #a40000;
 	margin-top: 10px;
 }

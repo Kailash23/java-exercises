@@ -1,11 +1,11 @@
 package model;
 
-public class User {
+public class Login {
 
-	String email;
-	String password;
+	private String email;
+	private String password;
 	
-	public User(String email, String password) {
+	public Login(String email, String password) {
 		this.email = email;
 		this.password = password;
 	}

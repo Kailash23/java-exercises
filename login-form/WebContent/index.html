@@ -9,14 +9,16 @@
 
 <body>
 
-    <form name="login" method="post" action="/login-form/submit">
-        <div>
-            <input name="email" type="email" onkeyup="validation.validateEmail()" autocomplete="off" required>
+    <form name="login" method="post" action="/login-form/login">
+        <div class="email" style="margin-bottom: 10px;">
+            <span>Email : </span>
+            <input name="email" type="email" onkeyup="validation.validateEmail()" required>
             <span class="email_error"></span>
         </div>
-
-        <div>
-            <input name="password" type="password" onkeyup="validation.validatePassword()" autocomplete="off" required>
+	
+        <div class="password" style="margin-bottom: 10px;">
+        	<span>Password : </span>
+            <input name="password" type="password" onkeyup="validation.validatePassword()" required>
             <span class="pass_error"></span>
         </div>
 

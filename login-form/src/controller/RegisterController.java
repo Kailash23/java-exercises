@@ -1,9 +1,6 @@
 package controller;
 
-import service.UserService;
 import java.io.IOException;
-
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login")
-public class LoginController extends HttpServlet {
+import model.Register;
+import service.UserService;
 
-	// The serialVersionUID is a universal version identifier
-	// for a Serializable class.
+@WebServlet("/register")
+public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -24,19 +21,17 @@ public class LoginController extends HttpServlet {
 
 		String emailInput = request.getParameter("email");
 		String passwordInput = request.getParameter("password");
+		String dateInput = request.getParameter("dob");
+		String addressInput = request.getParameter("address");
+
+		Register newUser = new Register(emailInput, passwordInput, dateInput, addressInput);
 
 		UserService userService = new UserService();
-		Boolean bool = userService.verifyUser(emailInput, passwordInput);
 
-		PrintWriter out = response.getWriter();
+		userService.createUser(newUser);
 
-		if (bool == true) {
+		RequestDispatcher view = request.getRequestDispatcher("/index.html");
+		view.forward(request, response);
 
-			RequestDispatcher view = request.getRequestDispatcher("/register.html");
-			view.forward(request, response);
-
-		} else {
-			out.println("<h1>Invalid admin details!</h1>");
-		}
 	}
 }
