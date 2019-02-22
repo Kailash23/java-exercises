@@ -15,12 +15,12 @@ import java.util.Scanner;
  */
 public class UI {
 
-	private static void menuOptions() {
-		System.out.println("");
-		System.out.println("1 - Arrange by name");
-		System.out.println("2 - Arrange by date");
-		System.out.println("");
-	}
+//	private static void menuOptions() {
+//		System.out.println("");
+//		System.out.println("1 - Arrange by name");
+//		System.out.println("2 - Arrange by date");
+//		System.out.println("");
+//	}
 
 	private static void modeOptions() {
 		System.out.println("");
