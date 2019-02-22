@@ -1,15 +1,14 @@
 package database;
 
 import java.sql.Connection;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class Operation {
@@ -62,10 +61,10 @@ public class Operation {
 
 		if (rs.first()) {
 			String name = rs.getString("name");
-			int empid = rs.getInt("empid");
+			int id = rs.getInt("empid");
 			Date doj = rs.getDate("doj");
 			int salary = rs.getInt("salary");
-			System.out.format("Name : %s\nEmployee id : %s\n" + "Date of Joining : %s\nSalary : %s\n", name, empId, doj,
+			System.out.format("Name : %s\nEmployee id : %s\n" + "Date of Joining : %s\nSalary : %s\n", name, id, doj,
 					salary);
 		} else {
 			System.out.println("Employee doesn't exist!");

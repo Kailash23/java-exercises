@@ -16,14 +16,12 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
 public class PostHttpRequest {
-	
 
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 		String url = "https://www.reqres.in/api/users";
 
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpPost postReq = new HttpPost(url);
-
 
 		List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		urlParameters.add(new BasicNameValuePair("name", "morpheus"));

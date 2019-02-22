@@ -20,7 +20,6 @@ public class PatchHttpClient {
 		String url = "https://www.reqres.in/api/users/2";
 
 		HttpPatch patchReq = new HttpPatch(url);
-
 		HttpClient client = HttpClientBuilder.create().build();
 
 		List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();

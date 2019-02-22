@@ -23,7 +23,6 @@ public class PutHttpClient {
 		String url = "https://www.reqres.in/api/users";
 
 		HttpPut putRequest = new HttpPut(url);
-
 		HttpClient client = HttpClientBuilder.create().build();
 
 		List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
@@ -46,6 +45,5 @@ public class PutHttpClient {
 		}
 		
 		System.out.println(result);
-		
 	}
 }
