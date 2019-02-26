@@ -30,7 +30,7 @@ public class LoginController extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		if (bool == true) {
+		if (bool) {
 
 			RequestDispatcher view = request.getRequestDispatcher("/register.html");
 			view.forward(request, response);

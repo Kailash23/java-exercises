@@ -2,8 +2,6 @@ package com.unit_testing.producer_consumer;
 
 import org.junit.Assert;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
@@ -18,9 +16,9 @@ import org.junit.Test;
 
 public class AppTest {
 
-	static int numOfTestCases;
-	static int consumerThreadSleepTime;
-	static int producerThreadSleepTime;
+static int numOfTestCases;
+private	static int consumerThreadSleepTime;
+private static int producerThreadSleepTime;
 
 	@BeforeClass
 	public static void appStart() {
@@ -119,15 +117,4 @@ public class AppTest {
 		// Queue size should be 1
 		Assert.assertEquals(queueResource.queue.size(), 1);
 	}
-
-	@After
-	public void after() {
-
-	}
-
-	@AfterClass
-	public static void afterClass() {
-
-	}
-
 }

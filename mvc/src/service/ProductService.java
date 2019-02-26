@@ -33,16 +33,17 @@ public class ProductService {
 		this.productDao = productDao;
 	}
 	
-	public List<Product> getAllProducts() {
+	public List<Product> getProductList() {
 		return productDao.getAllProducts();
 	}
 	
-	public Product getProductById(String productId) {
-		return productDao.getProductById(productId);
+	public Product getProductById(int productId) {
+//		return productDao.getProductById(productId);
+		return null;
 	}
 	
 	public void deleteProduct(String productId) {
-		productDao.deleteProduct(productId);
+		
 	}
 	
 	public void editProduct(Product product){

@@ -11,5 +11,12 @@ package service;
 
 public class OrderService {
 
+	public void placeOrder() {
+		
+	}
+	
+	public void addToOrderList() {
+		
+	}
 }
 

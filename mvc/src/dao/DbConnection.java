@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class DbConnection {
 	
-	private static Connection connection;
+	static Connection connection;
 	
 	public static void createConnection() {
 		try {

@@ -2,18 +2,15 @@ package database;
 
 import java.sql.Connection;
 
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Operation {
-
-	List<Employee> employeeList = new ArrayList<Employee>();
 
 	public String getCurrentDate() {
 		long millis = System.currentTimeMillis();

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-	static Connection conn;
+	private static Connection conn;
 
 	private static void options() {
 		System.out.println("");
@@ -110,6 +110,10 @@ public class MainMenu {
 				
 				op.showAllEmployee(conn);
 				break;	
+				
+			default:
+				System.out.println("Invalid input!");
+				break;
 			}
 
 			options();

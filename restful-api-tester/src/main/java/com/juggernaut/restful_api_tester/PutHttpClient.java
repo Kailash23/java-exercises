@@ -2,6 +2,7 @@
 package com.juggernaut.restful_api_tester;
 
 import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -16,15 +17,17 @@ import org.apache.http.client.methods.HttpPut;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
+
+
 public class PutHttpClient {
 
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 
-		String url = "https://www.reqres.in/api/users";
+		String url = "https://www.reqres.in/api/users/2";
 
 		HttpPut putRequest = new HttpPut(url);
 		HttpClient client = HttpClientBuilder.create().build();
-
+		
 		List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		urlParameters.add(new BasicNameValuePair("name", "morpheus"));
 		urlParameters.add(new BasicNameValuePair("job", "zion resident"));

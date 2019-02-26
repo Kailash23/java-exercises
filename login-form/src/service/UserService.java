@@ -8,7 +8,7 @@ import model.Register;
 
 public class UserService {
 
-	UserDao userDao = new UserDao();
+	private UserDao userDao = new UserDao();
 	
 	/**
 	 * User Authorization 

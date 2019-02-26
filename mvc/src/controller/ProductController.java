@@ -22,7 +22,7 @@ public class ProductController {
 		return products;
 	}
 	
-	public Product getProductById(String productId) {
+	public Product viewProduct(String productId) {
 		Product product = productService.getProductById(productId);
 		return product;
 	}
@@ -32,6 +32,6 @@ public class ProductController {
 	}
 	
 	public void addProduct() {
-//		productService.addProduct(product);
+//		productService.addProduct(new Product());
 	}
 }

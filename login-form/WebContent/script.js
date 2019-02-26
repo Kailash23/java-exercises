@@ -5,24 +5,24 @@ var validation = {
     validateEmail: function() {
         var email = loginForm.elements.email.value;
         var text = this.emailMessage(email);
-
+        var message = "";
         if (email.length > 0) {
-            var message = document.querySelector('.email_error');
+            message = document.querySelector('.email_error');
             message.innerText = text;
         } else {
-            var message = document.querySelector('.email_error');
+            message = document.querySelector('.email_error');
             message.innerText = "";
         }
     },
     validatePassword: function() {
         var password = loginForm.elements.password.value;
         var text = this.passwordMessage(password);
-
+        var message = "";
         if (password.length > 0) {
-            var message = document.querySelector('.pass_error');
+            message = document.querySelector('.pass_error');
             message.innerText = text;
         } else {
-            var message = document.querySelector('.pass_error');
+            message = document.querySelector('.pass_error');
             message.innerText = "";
         }
     },

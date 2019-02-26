@@ -21,8 +21,6 @@ public class EmployeeUse {
 		operation.addEmployee("Hemant", false, new Department(45, "finance"));
 		operation.addEmployee("Vishal", false, new Department(27, "marketing"));
 		
-		
-
 //		Assignment 1
 //
 //		operation.displayEmpDetails();

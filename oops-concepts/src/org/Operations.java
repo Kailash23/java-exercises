@@ -8,12 +8,12 @@ public class Operations {
 	/**
 	 * List for maintaining all employee objects
 	 */
-	LinkedList<Employee> employeeList = new LinkedList<Employee>();
+	private LinkedList<Employee> employeeList = new LinkedList<Employee>();
 	
 	/**
 	 * Map for maintaining all employee objects
 	 */
-	HashMap<String, ArrayList<Employee>> map = new HashMap<>();
+	private HashMap<String, ArrayList<Employee>> map = new HashMap<>();
 	
 	/**
 	 * List to store the name of the department
@@ -70,7 +70,7 @@ public class Operations {
 		return deptEmpList;
 	}
 	
-	void addEmpToMap() {
+	public void addEmpToMap() {
 		for (Employee emp : employeeList) {
 			String key = emp.getDeptName();
 			if (map.get(key) == null) {

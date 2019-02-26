@@ -1,7 +1,12 @@
 package dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
+import model.Order;
 import model.Product;
 
 /**
@@ -16,6 +21,8 @@ import model.Product;
  */
 public class ProductDao {
 
+	private List<Product> productList = new ArrayList<>();
+	
 	public void addProduct(Product product) {
 
 	}
@@ -24,18 +31,29 @@ public class ProductDao {
 		
 	}
 
-	public List<Product> getAllProducts() {
-		List<Product> products = null;
+	public List<Product> getProductList() {
+		
+		try {
+			PreparedStatement ps = DbConnection.getConnection().prepareStatement("select * from product");
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				productList.add(new Product(rs.getInt("productId"), rs.getString("productName"), rs.getInt("price"), rs.getString("desc"), rs.getInt("category")));
+			}
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
-		return products;
+		return productList;
 	}
-
-	public Product getProductById(String productId) {
+		
+	
+	public Product getProductById(int productId) {
 		Product product = null;
 		return product;
 	}
 
-	public void deleteProduct(String productId) {
+	public void deleteProduct(int productId) {
 
 	}
 
