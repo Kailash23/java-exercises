@@ -1,18 +1,10 @@
-package utils;
+package com.mvc.utils;
 
 import java.util.UUID;
 
-/**
- * 
- * @author kailash23
- *
- * Generate product id - UUID to ASCII sum.
- * Generate order id - - UUID to ASCII sum
- * 
- */
 public class Utils {
 	
-	public int generateProductId() {
+	public static int generateProductId() {
 		String uniqueID = UUID.randomUUID().toString();
 		int id = 0;
 		for (int i = 0; i < uniqueID.length(); i++) {
@@ -21,7 +13,7 @@ public class Utils {
 		return id;
 	}
 	
-	public int generateOrderId() {
+	public static int generateOrderId() {
 		String uniqueID = UUID.randomUUID().toString();
 		int id = 0;
 		for (int i = 0; i < uniqueID.length(); i++) {

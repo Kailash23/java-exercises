@@ -1,4 +1,4 @@
-package model;
+package com.mvc.model;
 
 public class Order {
 

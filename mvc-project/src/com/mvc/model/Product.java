@@ -1,4 +1,4 @@
-package model;
+package com.mvc.model;
 
 public class Product {
 
@@ -7,7 +7,7 @@ public class Product {
 	private int price;
 	private String desc;
 	private int category;
-	
+		
 	public Product(int productId, String productName, int price, String desc, int category) {
 		this.productId = productId;
 		this.productName = productName;
@@ -15,46 +15,35 @@ public class Product {
 		this.desc = desc;
 		this.category = category;
 	}
-
-	public int getItemId() {
+	
+	public int getProductId() {
 		return productId;
 	}
-
-	public void setItemId(int productId) {
+	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-
 	public String getProductName() {
 		return productName;
 	}
-
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-
 	public int getPrice() {
 		return price;
 	}
-
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
 	public String getDesc() {
 		return desc;
 	}
-
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-
 	public int getCategory() {
 		return category;
 	}
-
 	public void setCategory(int category) {
 		this.category = category;
 	}
-
 }
-	

@@ -1,9 +1,10 @@
-package service;
+package com.mvc.service;
 
 import java.util.List;
 
-import dao.ProductDao;
-import model.Product;
+import com.mvc.dao.ProductDao;
+import com.mvc.model.Product;
+
 
 /**
  * @author kailash23 
@@ -23,7 +24,7 @@ import model.Product;
 
 public class ProductService {
 
-	private ProductDao productDao;
+	private ProductDao productDao = new ProductDao();
 
 	public ProductDao getProductDao() {
 		return productDao;
@@ -34,19 +35,24 @@ public class ProductService {
 	}
 	
 	public List<Product> getProductList() {
-		return productDao.getAllProducts();
+		return productDao.getProductList();
 	}
 	
 	public Product getProductById(int productId) {
-//		return productDao.getProductById(productId);
-		return null;
+		return productDao.getProductById(productId);
 	}
 	
-	public void deleteProduct(String productId) {
-		
+	public Product getProductByName(String name) {
+		return productDao.getProductByName(name);
 	}
 	
-	public void editProduct(Product product){
-		productDao.editProduct(product);
+	public void deleteProduct(int productId) {
+		productDao.deleteProduct(productId);
 	}
+	
+	public void addProduct(Product product) {
+		productDao.addProduct(product);
+	}
+	
+//	TODO : edit product
 }
